@@ -1,0 +1,30 @@
+Java
+    - Java 8
+    - Java 17
+    - Collections Framework
+    - Multithreading
+    - Concurrency
+    - Coding with Java 8 Features (Streams, Lambda Expressions, Functional Interfaces)
+
+Spring Boot
+    - Spring Boot
+    - Dependency Injection (DI)
+    - JPA (Java Persistence API)
+    - JPQL (Java Persistence Query Language)
+    - AOP (Aspect-Oriented Programming)
+    - Spring Security with JWT
+    - Authentication & Authorization
+
+Microservices
+    - Microservices Architecture
+    - Microservices Design Patterns
+    - Communication Between Services
+    - Service Discovery
+    - API Gateway
+    - Load Balancer
+    - Circuit Breaker
+    - Rate Limiter
+
+Messaging & Containerization
+    - Apache Kafka
+    - Containerization with Docker

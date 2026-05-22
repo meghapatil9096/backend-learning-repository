@@ -1,0 +1,51 @@
+Collection Framework:
+        - The Collection Framework is a set of classes and interfaces used to store, manage and manipulate groups of objects.
+        - It provides : - Dynamic data storage
+                        - Searching
+                        - Sorting
+                        - Iteration
+                        - Performance optimization
+                        - Ready-made data structures and algorithms
+
+Collection Framework Hierarchy:
+        - Collection (Interface)
+                - List (Interface)
+                        - ArrayList (Class)
+                        - LinkedList (Class)
+                        - Vector (Class)
+                - Set (Interface)
+                        - HashSet (Class)
+                        - LinkedHashSet (Class)
+                        - TreeSet (Class)
+                - Queue (Interface)
+                        - PriorityQueue (Class)
+                        - LinkedList (Class)
+
+        - Map (Interface)
+                - HashMap (Class)
+                - LinkedHashMap (Class)
+                - TreeMap (Class)
+                - Hashtable (Class)
+
+---------------------------------------------------------------------------------------------------------
+
+List : The List interface is part of the Java Collection Framework. It is used to store ordered collection of elements.
+        - Maintains insertion order
+        - Allows duplicate elements
+        - Access by index
+        - Allows null values
+        - implementations :
+                - ArrayList :
+                        - Resizable array implementation
+                        - Fast for searching
+                        - Slow insertions and deletions (O(n))
+
+                - LinkedList :
+                        - Doubly linked list implementation
+                        - Fast insertions and deletions (O(1))
+                        - Slow for searching (O(n))
+
+                - Vector :
+                        - Synchronized version of ArrayList
+                        - Thread-safe but slower than ArrayList
+                        - Legacy class, not recommended for new code
