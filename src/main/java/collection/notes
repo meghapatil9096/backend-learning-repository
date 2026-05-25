@@ -53,3 +53,141 @@ List : The List interface is part of the Java Collection Framework. It is used t
 
                 - Stack :
                         - LIFO stack (extends Vector)
+                        - Provides push, pop, peek operations
+                        - peek() : Returns the top element without removing it from the stack.
+                        - push(E item) : Adds an item to the top of the stack.
+                        - pop() : Removes and returns the top element of the stack.
+
+    Methods in List interface :
+                - add(E element) : Appends the specified element to the end of this list.
+                - add(int index, E element) : Inserts the specified element at the specified position in this list.
+                - get(int index) : Returns the element at the specified position in this list.
+                - remove(int index) : Removes the element at the specified position in this list.
+                - set(int index, E element) : Replaces the element at the specified position in this list with the specified element.
+                - size() : Returns the number of elements in this list.
+                - clear() : Removes all of the elements from this list. The list will be empty after this call returns.
+                - contains(Object o) : Returns true if this list contains the specified element.
+                - indexOf(Object o) : Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element.
+                - lastIndexOf(Object o) : Returns the index of the last occurrence of the specified element in this list
+
+Set : The Set interface is part of the Java Collection Framework. It is used to store unique elements.
+        - Does not maintain insertion order (except LinkedHashSet)
+        - Does not allow duplicate elements
+        - Access by value (no index)
+        - Allows null values (except TreeSet)
+        - implementations :
+                - HashSet :
+                        - No duplicates allowed
+                        - Unordered collection
+                        - Fast operations
+                        - Uses Hashing  and HashMaping internally to store elements
+
+                - LinkedHashSet :
+                        - Hash table and linked list implementation
+                        - Maintains insertion order
+                        - Fast for add, remove, contains operations (O(1))
+                        - duplicates not allowed
+
+                - TreeSet :
+                        - Internally uses Red-Black tree data structure
+                        - Maintains sorted order
+                        - Slower for add, remove, contains operations (O(log n))
+                        - duplicates not allowed
+        Methods in Set interface :
+                - add(E element) : Adds the specified element to this set if it is not already present.
+                - remove(Object o) : Removes the specified element from this set if it is present.
+                - contains(Object o) : Returns true if this set contains the specified element.
+                - size() : Returns the number of elements in this set.
+                - clear() : Removes all of the elements from this set. The set will be empty after this call returns.
+                - iterator() : Returns an iterator over the elements in this set. The elements are returned in no particular order (unless this set is an instance of LinkedHashSet, in which case the elements are returned in the order in which they were inserted).
+
+
+Queue : The Queue interface is part of the Java Collection Framework.
+        It is used to store elements in a specific order for processing.
+        - FIFO (First-In-First-Out) order (except PriorityQueue)
+        - Maintains insertion order
+        - Allows duplicate elements
+        - Access by value (no index)
+        - Allows null values (except PriorityQueue)
+        - implementations :
+                - PriorityQueue :
+                        - Elements are ordered based on their natural ordering or a custom comparator
+                        - Does not allow null values
+                        - Not thread-safe
+        Methods in Queue interface :
+                - add(E element) : Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning true upon success and throwing an IllegalStateException if no space is currently available.
+                - offer(E element) : Inserts the specified element into this queue if it is possible to do so immediately without violating capacity restrictions, returning true upon success and false if no space is currently available.
+                - remove() : Retrieves and removes the head of this queue. This method differs from poll() only in that it throws an exception if this queue is empty.
+                - poll() : Retrieves and removes the head of this queue, or returns null if this queue is empty.
+                - peek() : Retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Map : The Map interface is part of the Java Collection Framework. It is used to store key-value pairs.
+        - Does not maintain insertion order (except LinkedHashMap)
+        - Keys must be unique, values can be duplicate
+        - Access by key
+        - Allows null values (except TreeMap)
+        - implementations :
+                - HashMap :
+                        - No duplicates allowed for keys
+                        - Unordered collection
+                        - Fast operations (O(1))
+                        - Uses Hashing and HashMaping internally to store key-value pairs
+                        - Not synchronized
+
+                - LinkedHashMap :
+                        - Hash table and linked list implementation
+                        - Maintains insertion order
+                        - Fast for add, remove, contains operations (O(1))
+                        - duplicates not allowed for keys
+
+                - TreeMap :
+                        - Internally uses Red-Black tree data structure
+                        - Maintains sorted order based on keys
+                        - Slower for add, remove, contains operations (O(log n))
+                        - duplicates not allowed for keys
+
+                - Hashtable :
+                        - Synchronized version of HashMap
+                        - Thread-safe key-value storage
+                        - Legacy class, not recommended for new code
+
+        -Methods in Map interface :
+                - put(K key, V value) : Associates the specified value with the specified key in
+                  this map. If the map previously contained a mapping for the key, the old value is replaced.
+                - get(Object key) : Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.
+                - remove(Object key) : Removes the mapping for a key from this map if it is present.
+                - containsKey(Object key) : Returns true if this map contains a mapping for the specified key.
+                - containsValue(Object value) : Returns true if this map maps one or more keys to the specified value.
+                - size() : Returns the number of key-value mappings in this map.
+                - clear() : Removes all of the mappings from this map. The map will be empty after this call returns.
+                - keySet() : Returns a Set view of the keys contained in this map.
+                - values() : Returns a Collection view of the values contained in this map.
+                - entrySet() : Returns a Set view of the mappings contained in this map. Each
+                  element in the returned set is a Map.Entry object representing a key-value pair in the map.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Collections Utility Class : The Collections class is a utility class in the Java Collection Framework that provides static methods for operating on collections. It includes methods for sorting, searching, and manipulating collections.
+        - Collections.sort(list);
+        - Collections.reverse(list);
+        - Collections.shuffle(list);
+        - Collections.max(list);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+| Arrays            | Collections   |
+| ----------------- | ------------- |
+| Fixed size        | Dynamic       |
+| Primitive support | Objects       |
+| Less flexible     | Powerful APIs |
+========================================================================================================================================
+
+Use:
+ArrayList → frequent reading
+LinkedList → frequent insert/delete
+HashSet → uniqueness
+TreeSet → sorted data
+HashMap → key-value storage
+ConcurrentHashMap → multithreading
+==========================================================================================================================================
+
