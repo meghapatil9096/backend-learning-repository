@@ -1,0 +1,172 @@
+Java 8
+
+Lambda Expressions :
+    - A lambda expression is a short block of code which takes in parameters and returns a value.
+    - Lambda expression is an anonymous function.
+        It - Has no name
+             Has no return type declaration
+             Used to write short code
+    - Syntax :  (parameters) -> { body }
+
+    - Advantages of Lambda Expressions :
+        - It makes code more readable and concise.
+        - It allows us to write functional programming style code in Java.
+        - It helps to reduce boilerplate code.
+        - Mostly used with Stream API
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Functional Interfaces :
+    - An interface having ONLY ONE abstract method is called Functional Interface.
+    - It can have multiple default or static methods.
+    - It can be used as the assignment target for a lambda expression or method reference.
+
+    - Important Functional Interfaces in Java 8 :
+        | Interface     | Method   | Purpose                                                      |
+        | ---------     | -------- | ------------------------------------------------------------ |
+        | Predicate<T>  | test()   | Returns a boolean value based on the input argument.         |
+        | Function<T,R> | apply()  | Takes an argument of type T and returns a result of type R.  |
+        | Consumer<T>   | accept() | Takes an argument and returns no result.                     |
+        | Supplier<T>   | get()    | Takes no arguments and returns a result.                     |
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Method Reference    - Method reference is shortcut syntax of lambda.
+                    - It is used to refer to a method without invoking it.
+                    - It can be used to refer to static methods, instance methods, and constructors.
+
+    - Types of Method References :
+       | Type            | Syntax                |
+       | --------------- | --------------------- |
+       | Static Method   | ClassName::methodName |
+       | Instance Method | object::methodName    |
+       | Constructor     | ClassName::new        |
+-------------------------------------------------------------------------------------------------------------------
+
+Stream API   - Stream is used to process collections of data.
+             - It provides a high-level abstraction for processing sequences of elements.
+             - It allows us to perform operations like filter, map, reduce, etc. on collections.
+
+    - Operations on Stream : Filtering, Sorting, Mapping, Collecting
+        | Operation  | Description                                                                 |
+        | ---------- | --------------------------------------------------------------------------- |
+        | filter()   | Used to filter elements based on a condition.                               |
+        | map()      | Used to transform each element into another form.                           |
+        | reduce()   | Used to combine all elements into a single result.                          |
+        | collect()  | Used to collect the results into a collection or other data structure.      |
+
+    Before Java 8 :
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+
+        for(Integer i : list) {
+            if(i % 2 == 0) {
+                System.out.println(i);
+            }
+        }
+    With Java 8 :
+        list.stream()
+            .filter(x -> x % 2 == 0)
+            .forEach(System.out::println);
+
+    Stream flow :
+        Collection → Stream → Operations → Result
+        Source  -> Intermediate Operations :    filter(), map(), sorted()
+                -> Terminal Operation      :    collect(), forEach(), count()
+
+
+    Common stream methods:  | Method     | Purpose           |
+                            | ---------- | ----------------- |
+                            | filter()   | Filter data       |
+                            | map()      | Transform data    |
+                            | sorted()   | Sort data         |
+                            | distinct() | Remove duplicates |
+                            | limit()    | Limit results     |
+                            | count()    | Count elements    |
+                            | collect()  | Convert result    |
+                            | forEach()  | Iterate           |
+
+    Parallel Stream : Used for multithreading internally.
+        - A parallel stream is a stream that can process elements in parallel, utilizing multiple CPU cores for improved performance.
+        - It can be created by calling the parallelStream() method on a collection.
+
+        Example :
+            List<Integer> list = Arrays.asList(1,2,3,4,5);
+            list.parallelStream()
+                .filter(x -> x % 2 == 0)
+                .forEach(System.out::println);
+
+    | Stream        | Parallel Stream       |
+    | ------------- | --------------------- |
+    | Single Thread | Multiple Threads      |
+    | Slower        | Faster for large data |
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Default & Static Method in Interface :
+    - Default Method : -  A method in an interface that has a default implementation.
+                       - It allows us to add new methods to interfaces without breaking existing implementations.
+    - Static Method :  - A method in an interface that belongs to the interface itself rather than any instance.
+                       - It can be called without creating an instance of the interface.
+
+    Example :
+        interface MyInterface {
+            void abstractMethod(); // Abstract method
+
+            default void defaultMethod() { // Default method
+                System.out.println("This is a default method.");
+            }
+
+            static void staticMethod() { // Static method
+                System.out.println("This is a static method.");
+            }
+        }
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Optional Class :
+    - Optional is a container object which may or may not contain a non-null value.
+    - It is used to avoid null checks and NullPointerExceptions.
+
+    Example :
+        Optional<String> optional = Optional.of("Hello");
+        if(optional.isPresent()) {
+            System.out.println(optional.get());
+        }
+
+        // Using orElse
+        String result = optional.orElse("Default Value");
+        System.out.println(result);
+
+    Optional Methods :
+    | Method       | Purpose        |
+    | ------------ | -------------- |
+    | of()         | Non-null value |
+    | ofNullable() | Nullable value |
+    | isPresent()  | Check value    |
+    | get()        | Get value      |
+    | orElse()     | Default value  |
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+Date And Time API :
+    - Java 8 introduced a new Date and Time API in the java.time package.
+    - It provides a more comprehensive and flexible way to handle date and time compared to the old java.util.Date and java.util.Calendar classes.
+
+    Important Classes :
+    | Class         | Purpose                                                |
+    | ------------- | ------------------------------------------------------ |
+    | LocalDate     | Represents a date (year, month, day) without time.     |
+    | LocalTime     | Represents a time (hour, minute, second) without date. |
+    | LocalDateTime | Represents both date and time.                         |
+    | ZonedDateTime | Represents date and time with timezone.                |
+
+
+    | Collection  | Stream         |
+    | ----------- | -------------- |
+    | Stores data | Processes data |
+    | Can modify  | Cannot modify  |
+    | Eager       | Lazy           |
+
+
+    | map()                   | filter()                |
+    | ----------------------- | ----------------------- |
+    | Transform data          | Filter data             |
+    | Returns modified stream | Returns filtered stream |
+
