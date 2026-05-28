@@ -18,7 +18,7 @@ Lambda Expressions :
 Functional Interfaces :
     - An interface having ONLY ONE abstract method is called Functional Interface.
     - It can have multiple default or static methods.
-    - It can be used as the assignment target for a lambda expression or method reference.
+    - It can be used as the assignment target for a lambda expression.
 
     - Important Functional Interfaces in Java 8 :
         | Interface     | Method   | Purpose                                                      |

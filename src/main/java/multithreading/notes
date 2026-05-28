@@ -1,0 +1,80 @@
+Multithreading : Multithreading is a process to execute multiple threads at the same time without depending of other threads.
+                  - It allows concurrent execution of two or more parts of a program for maximum utilization of CPU.
+                  - Each part of such a program is called a thread and each thread defines a separate path of execution.
+                  - A thread is Smallest unit of execution inside a process.
+
+    How to create a thread in Java :
+        1. By extending Thread class
+        2. By implementing Runnable interface
+
+        some methods of Thread class :
+            - start() : Used to start the thread and call the run() method.
+            - run() : Contains the code that defines the thread's task.
+            - sleep(long millis) : Used to pause the thread for a specified time.
+            - join() : Used to wait for a thread to finish its execution.
+-----------------------------------------------------------------------------------------------------------------------------------------------
+     | Process             | Thread             |
+     | ------------------- | ------------------ |
+     | Independent program | Part of process    |
+     | Heavyweight         | Lightweight        |
+     | Separate memory     | Shared memory      |
+     | Slower              | Faster             |
+     | Example: Chrome     | Tabs inside Chrome |
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Benefits of Multithreading:
+    - Faster execution
+    - Better CPU utilization
+    - Parallel tasks
+    - Background processing
+    - Responsive applications
+
+Thread : A thread is a lightweight process. It is the smallest unit of execution in a program and allows for multitasking.
+    Thread lifecycle :
+        1. New : A thread is created but not yet started.
+        2. Runnable : A thread is ready to run and waiting for CPU time.
+        3. Running : A thread is executing its task.
+        4. Blocked/Waiting : A thread is waiting for a resource or event.
+        5. Terminated : A thread has completed its execution or has been stopped.
+
+        New-->Runnable-->Running-->Terminated(Dead)
+              |         |
+              |         |
+              |         |
+              -->Blocked/Waiting(sleep(), wait(), join())<--
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Synchronization : Synchronization is a technique through which we can control multiple threads or among the number of threads
+                  only one thread will enter inside the synchronized block of code at a time.
+
+    note : The main purpose of synchronization is to overcome the problem of multithreading, when multiple threads are trying to access the same resource at same time on that situation its may provides some wrong result. To avoid this problem we can use synchronization.
+           Q) why synchronization is needed in multithreading?
+            Multithreading problems :
+                   Multithreading is very good whenever we want to complete our task as soon as possible, but in some situation it may
+                   provide wrong result or corrupted data, this situation occure when multiple threads are trying to access the same resource at
+                   same time, to avoid this problem we can use synchronization.
+
+    Types of Synchronization :
+        - Synchronized Method : A method that is declared with the synchronized keyword. It allows only one thread to access the method at
+                                a time.
+        - Synchronized Block : A block of code that is synchronized on a specific object. It allows only one thread to access the block of code at a time.
+                               In block level synchronization the entire method is not get synchronized only the part of the method get
+                               synchronized, we have to enclosed those few lines of the code put inside synchronized block.
+    Example :
+        public class Counter {
+            private int count = 0;
+
+            public synchronized void increment() { // Synchronized method
+                count++;
+            }
+
+            public void decrement() {
+                synchronized(this) { // Synchronized block
+                    count--;
+                }
+            }
+
+            public int getCount() {
+                return count;
+            }
+        }
+
