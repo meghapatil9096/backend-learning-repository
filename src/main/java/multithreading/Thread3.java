@@ -27,7 +27,7 @@ public class Thread3 {
             System.out.println("Notify");
             s1.notify();
         }
-//        if i don't call notify still this code is work because JVM internally call notifyAll().
+//        if I don't call notify still this code is work because JVM internally call notifyAll().
         s3.start();
 
 

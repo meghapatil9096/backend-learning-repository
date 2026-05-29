@@ -1,0 +1,24 @@
+Concurrency : Concurrency is the ability to handle multiple task at once. It doesn't always means task are happening at the exact
+              millisecond rather, it mean they making progress simultaneously by overlapping in time.
+
+The core concept of concurrency is Thread:
+    Think of program as a kitchen, A thread is like a cook.
+    - Single Thread : A single cook in the kitchen, can only prepare one dish at a time.
+    - Multi Thread : Multiple cooks in the kitchen, can prepare multiple dishes at the same time, increasing efficiency.
+
+Benefits of Concurrency:
+            1. Improved Performance
+            2. Responsiveness
+            3. Resource Utilization
+            4. Scalability
+            5. Simplified Code Structure
+
+difference between Concurrency and Parallelism:
+    - Concurrency : Multiple tasks making progress simultaneously, but not necessarily at the same time.
+                    (e.g. single cook switching between dishes)
+    - Parallelism : Multiple tasks executing at the exact same time, typically on multiple processors or cores.
+                    (e.g. multiple cooks working on different dishes simultaneously)
+
+Difference between concurrency and multithreading:
+------ Concurrency ----------------|---------------- Multithreading ----------------------|--------------- Parallelism ----------------
+Managing multiple tasks at once.   |  Executing multiple threads within a single process. |  Executing multiple tasks simultaneously on multiple processors.
