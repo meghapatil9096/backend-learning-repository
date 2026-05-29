@@ -1,4 +1,21 @@
+# IntelliJ
 .idea/
 *.iml
-out/
+
+# Maven
 target/
+
+# Build folders
+out/
+build/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Spring Boot
+HELP.md
+.mvn/wrapper/maven-wrapper.jar
