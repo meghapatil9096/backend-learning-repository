@@ -1,4 +1,5 @@
-Java 8
+Java 8 : Java 8, released by Oracle in 2014, is the biggest update in Java's history.
+         It transformed the language by introducing Functional Programming.
 
 Lambda Expressions :
     - A lambda expression is a short block of code which takes in parameters and returns a value.
