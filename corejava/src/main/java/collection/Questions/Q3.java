@@ -2,7 +2,6 @@ package collection.Questions;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Q3 {
 //     Find Pairs with Target Sum :  You are given two lists of integers

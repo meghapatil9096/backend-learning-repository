@@ -1,7 +1,6 @@
 package collection.Questions;
 
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Q2 {
