@@ -1,0 +1,51 @@
+Spring Boot : Spring Boot is a Java framework used to build web applications, REST APIs, and microservices quickly.
+
+              Before Spring Boot, developers had to write lots of configuration code and XML files.
+              Spring Boot makes development fast, easy, and production-ready.
+
+---------------------------------------------------------
+| Without Spring Boot        | With Spring Boot         |
+| -------------------------- | ------------------------ |
+| More configuration         | Less configuration       |
+| Manual setup               | Auto setup               |
+| Need external server setup | Embedded server included |
+| More boilerplate code      | Faster coding            |
+----------------------------------------------------------
+
+1. Dependency Injection (DI) :  Spring creates objects automatically and injects them where needed.
+
+    Instead of : EmployeeService service = new EmployeeService();
+    Spring does it automatically using annotations.
+            Example:
+                    @Service
+                    public class EmployeeService {
+                    }
+                        @RestController
+                        public class EmployeeController {
+
+                        @Autowired
+                        private EmployeeService service;
+                    }
+Why important DI?
+    - Loose coupling
+    - Easy testing
+    - Better code management
+
+
+
+@Controller
+@RestController = @Controller + @ResponseBody
+@ResponseBody
+
+@RequestMapping
+@GetMapping = @RequestMapping(method = RequestMethod.GET)
+@PostMapping = @RequestMapping(method = RequestMethod.POST)
+@PutMapping = @RequestMapping(method = RequestMethod.PUT)
+@DeleteMapping = @RequestMapping(method = RequestMethod.DELETE)
+@PatchMapping = @RequestMapping(method = RequestMethod.PATCH)
+
+@PathVariable =
+@RequestParam
+@RequestBody
+@RequestHeader
+
