@@ -1,4 +1,4 @@
-package java8;
+package java8.questions;
 
 import java.util.Arrays;
 import java.util.List;

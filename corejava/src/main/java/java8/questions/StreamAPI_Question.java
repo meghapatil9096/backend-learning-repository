@@ -1,4 +1,4 @@
-package java8;
+package java8.questions;
 
 import java.util.*;
 import java.util.stream.Collectors;
